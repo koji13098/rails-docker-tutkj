@@ -6,11 +6,11 @@ jobs:
   build:
     docker:
       - image: circleci/ruby:2.7
-      working_directory: ~/rails-docker-tutkj/src
-      steps:
-        - checkout:
-            path: ~/rails-docker-tutkj
-        - ruby/install-deps
+    working_directory: ~/rails-docker-tutkj/src
+    steps:
+      - checkout:
+          path: ~/rails-docker-tutkj
+      - ruby/install-deps
 
   test:
     docker:
@@ -43,5 +43,5 @@ workflows:
     jobs:
       - build
       - test:
-        requires:
-          - build
+          requires:
+            - build
